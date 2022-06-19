@@ -1,0 +1,75 @@
+.showing{
+    display: flex;
+   
+}
+
+.bookCards{
+    width: 230px;
+    height: 260px;
+    font-size: 12px;
+    border-radius: 20px;
+    background-color: rgb(59, 124, 182);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    border-left: 14px solid rgb(54, 54, 51);
+    
+    
+}
+
+body{
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+.titleToDisplay{
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+    
+    
+}
+
+
+
+input{
+    width: 70%;
+    /* -webkit-appearance: none;
+    appearance: none; */
+    border-radius: 90px;
+}
+
+.theForm{
+    display:none;
+}
+
+.showNow{
+    background-image: linear-gradient(rgb(37, 105, 161), rgb(3, 30, 54), rgb(37, 105, 161));
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px    ;
+    width: 400px;
+    height:400px;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    color: rgb(236, 234, 234);
+    font-weight: bold;
+}
+
+.addBook{
+    background-color: rgb(152, 190, 223);
+    height: 30px;
+    width: 90px;
+    border-radius: 90px;
+    font-weight: bold;
+}
+
+

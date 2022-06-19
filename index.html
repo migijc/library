@@ -7,8 +7,26 @@
     <title>Library</title>
     <link rel="stylesheet" href="./styles.css">
     <script src="./script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <button class="newBook">Add Book</button>
+    <form action="post" class="theForm">
+        <label for="bookName">What book did you read or want to read?</label>
+        <input type="text" name="bookName" id="bookName">
+        <label for="bookAuthor">Who is the author</label>
+        <input type="text" name="bookAuthor" id="bookAuthor">
+        <label for="pages">How many pages is it</label>
+        <input type="number" name="pages" id="pages">
+        <p>Did you read this book?</p>
+        <input type="radio" name="read" value="Yes" id="yesRead">
+        <label for="read">Yes</label>
+        <input type="radio" name="read" value="No" id="notYead"> 
+        <label for="read">Not yet</label>
+        <button type="button" class="addBook">Add Book</button>
+        
+    </form>
 </body>
 </html>
