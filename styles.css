@@ -1,5 +1,8 @@
 .showing{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:150px;
+    margin: 70px;
    
 }
 
@@ -8,21 +11,26 @@
     height: 260px;
     font-size: 12px;
     border-radius: 20px;
-    background-color: rgb(59, 124, 182);
+    background-image: linear-gradient(rgb(37, 105, 161), rgb(3, 30, 54), rgb(37, 105, 161));
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
-    border-left: 14px solid rgb(54, 54, 51);
+    border-right: 14px solid #d6d6d6;
     
     
 }
 
 body{
-    background-color: aliceblue;
+    background-color: rgb(70, 70, 70);
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 *{
@@ -39,12 +47,7 @@ body{
 
 
 
-input{
-    width: 70%;
-    /* -webkit-appearance: none;
-    appearance: none; */
-    border-radius: 90px;
-}
+
 
 .theForm{
     display:none;
@@ -58,18 +61,101 @@ input{
     width: 400px;
     height:400px;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
     align-items: center;
     color: rgb(236, 234, 234);
     font-weight: bold;
+    box-sizing: border-box;
+    position: absolute;
+    color:#f3f3f3;
+    top: 25%;
 }
 
 .addBook{
-    background-color: rgb(152, 190, 223);
-    height: 30px;
-    width: 90px;
+    background-color:transparent;
+    height: 45px;
+    width: 165px;
     border-radius: 90px;
     font-weight: bold;
+    color: white;
+    border: 2px solid #ff741a;
 }
 
 
+.input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 90px;
+    gap:4px;
+    appearance: none;
+}
+
+
+
+.yes{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   border: solid 2px red;
+}
+
+.no{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border: solid 2px red;
+}
+
+select{
+    width: 80px;
+}
+
+input{
+    border-radius: 90px;
+    height: 15px;
+    width: 70%;
+}
+
+.select{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bookRead{
+    margin: 0;
+}
+
+.formButtonHovered{
+    background-color: #ff741a;
+}
+
+.removeButton{
+    width: 60px;
+    height: 30px;
+    border-radius: 90px;
+ 
+    background-color: transparent;
+    border:None;
+    width: 100%;
+}
+.removeButtonHovered{
+    background-color: red;
+}
+
+.newBook{
+    height: 35px;
+    width: 100%;
+    background-color: #ff741a;
+    font-size: 30px;
+    color: White;
+    border: none;
+    border-radius: 90px;
+    font-weight: bold;
+    font-style: italic;
+
+}
