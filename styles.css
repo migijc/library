@@ -1,9 +1,12 @@
 .showing{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap:150px;
-    margin: 70px;
-   
+    gap:60px;
+    margin-top: 125px;
+    margin-bottom: 30px;
+    overflow:auto;
+    box-sizing: border-box;
+    justify-items: center;
 }
 
 .bookCards{
@@ -11,18 +14,18 @@
     height: 260px;
     font-size: 12px;
     border-radius: 20px;
-    background-image: linear-gradient(rgb(37, 105, 161), rgb(3, 30, 54), rgb(37, 105, 161));
+    background-color: #f3f3f3;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
-    border-right: 14px solid #d6d6d6;
-    
-    
+    color: #17425f;
+    overflow: none;
+    border-top:15px solid #ff741a;
+    gap: .4rem;
 }
 
 body{
-    background-color: rgb(70, 70, 70);
+    background-image: linear-gradient(45deg, rgb(15, 44, 63), rgb(21, 74, 109), rgb(52, 135, 190), rgb(101, 161, 201));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,6 +34,7 @@ body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 *{
@@ -41,13 +45,17 @@ body{
     font-size: 22px;
     font-weight: bold;
     font-style: italic;
-    
-    
+    font-family: rieven-uncial, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    margin:0;
+    padding: 0;
+    color: #4c94c3;
+    overflow-wrap:break-word;
+    width: 100%;
+    text-align: center;
+    /* margin-bottom: 1rem; */
 }
-
-
-
-
 
 .theForm{
     display:none;
@@ -57,7 +65,7 @@ body{
     background-image: linear-gradient(rgb(37, 105, 161), rgb(3, 30, 54), rgb(37, 105, 161));
     display: flex;
     flex-direction: column;
-    border-radius: 15px    ;
+    border-radius: 15px;
     width: 400px;
     height:400px;
     justify-content: center;
@@ -69,6 +77,7 @@ body{
     position: absolute;
     color:#f3f3f3;
     top: 25%;
+    box-shadow: 9px 9px 9px #212121;
 }
 
 .addBook{
@@ -137,25 +146,93 @@ input{
 .removeButton{
     width: 60px;
     height: 30px;
-    border-radius: 90px;
- 
+    
     background-color: transparent;
     border:None;
     width: 100%;
+    color: rgb(32, 30, 30);
+    font-weight: bold;
 }
+
 .removeButtonHovered{
-    background-color: red;
+    background-color: rgb(197, 74, 74);
 }
 
 .newBook{
-    height: 35px;
+    height: 40px;
     width: 100%;
-    background-color: #ff741a;
+    background-color: #fdfdfd;
     font-size: 30px;
-    color: White;
+    color: #4c94c3;
     border: none;
     border-radius: 90px;
     font-weight: bold;
     font-style: italic;
+    margin: 0;
+    padding: 0;
+    font-family: rieven-uncial, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.footer{
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    position: absolute;
+    bottom:0;
+    font-size: 30px;
+    color: rgb(122, 121, 121);
+}
+
+h4{
+    font-size: 16px;
+    margin:0;
+    padding: 0;
+}
+
+#toggleStatus{
+    height: 20px;
+    width: 20px;
+    opacity: 0;
+    display: hidden;
+   
 
 }
+
+.toggleButtonContainer{
+    display: flex;
+    align-items: center;
+}
+
+#toggleStatus:checked + label{
+    color:red;
+    
+}
+
+label[for="toggleStatus"]::before{
+    content: "";
+    height: 1.1em;
+    width: 2.1em;
+    background-color: gray;
+    border-radius: 1em;
+}
+
+label[for="toggleStatus"]::after{
+    content: "";
+    height: .9em;
+    width: .9em;
+    background-color: rgb(6, 153, 221);
+    border-radius: 1em;
+    position: absolute;
+    top:.1em;
+    left:.1em;
+}
+
+#toggleStatus + label{
+    display: flex;
+    position: relative;
+}
+
+
+

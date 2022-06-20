@@ -60,8 +60,21 @@ let displayBookNames = function (index){
     let bookCard= document.createElement("div");
     let removeButton=document.createElement("button")
     removeButton.textContent="Remove Book"
+    let toggleButton=document.createElement("input")
     let titleToDisplay=document.createElement('h4');
     titleToDisplay.classList.add("titleToDisplay")
+    let toggleLabel=document.createElement('label')
+    toggleLabel.setAttribute("for", "toggleStatus")
+    toggleButton.setAttribute("value", "notRead")
+    toggleButton.setAttribute("type","checkbox")
+    toggleButton.setAttribute("class", "toggle")
+    toggleButton.setAttribute("name", "toggleStatus")
+    toggleButton.setAttribute("id", "toggleStatus")
+    let toggleButtonContainer=document.createElement("div")
+    toggleButtonContainer.setAttribute("class", "toggleButtonContainer")
+    toggleButtonContainer.appendChild(toggleButton)
+    toggleButtonContainer.appendChild(toggleLabel)
+    toggleLabel.textContent="read status"
     let authorToDisplay=document.createElement("h4");
     let pagesToDisplay= document.createElement('h4');
     let hasReadToDisplay=document.createElement('h4')
@@ -72,7 +85,7 @@ let displayBookNames = function (index){
         titleToDisplay.textContent=item.bookName
         authorToDisplay.textContent= `By: ${item.bookAuthor}`;
         pagesToDisplay.textContent=`Pages: ${item.bookPages}`;
-        hasReadToDisplay.textContent=item.bookRead;
+        hasReadToDisplay.textContent=`Book Read: ${item.bookRead}`;
     });
         booksGrid.classList.add("showing")
         booksGrid.appendChild(bookCard)
@@ -81,11 +94,17 @@ let displayBookNames = function (index){
         bookCard.appendChild(pagesToDisplay)
         bookCard.appendChild(hasReadToDisplay);
         bookCard.appendChild(removeButton);
+        bookCard.appendChild(toggleButtonContainer)
         removeBook(removeButton);
         bookCard.setAttribute("data-index", index)
         addClassToRemoveButton(removeButton)
         removeClassFromRemoveButton(removeButton)
+        getToggleBoolean(toggleButton,hasReadToDisplay)
 };
+
+
+
+
 let addClassToRemoveButton=function(button){
 button.addEventListener('mouseenter', () => {
     button.classList.add("removeButtonHovered")
@@ -99,7 +118,14 @@ let removeClassFromRemoveButton=function(button){
     }
 
 
+let toggleBoolean = document.getElementsByClassName("toggle").checked ? 'true' : 'false';
 
-
-
-
+let getToggleBoolean= function (toggleButton,hasReadToDisplay){
+    toggleButton.addEventListener('click', (e)=> {
+        let index=(e.target.parentNode.parentNode.getAttribute('data-index'))
+        toggleBoolean=toggleButton.checked ? 'Yes' : 'No';
+        myLibrary[index].bookRead=toggleBoolean
+        hasReadToDisplay.textContent= `Book Read: ${myLibrary[index].bookRead=toggleBoolean}`
+        console.log(toggleBoolean)
+    })
+}
