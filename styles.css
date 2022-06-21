@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap:60px;
-    margin-top: 125px;
+    margin-top: 135px;
     margin-bottom: 30px;
     overflow:auto;
     box-sizing: border-box;
@@ -21,7 +21,9 @@
     color: #17425f;
     overflow: none;
     border-top:15px solid #ff741a;
-    gap: .4rem;
+    gap: 1.4rem;
+    position: relative;
+    box-sizing: border-box;
 }
 
 body{
@@ -51,7 +53,7 @@ body{
     margin:0;
     padding: 0;
     color: #4c94c3;
-    overflow-wrap:break-word;
+    overflow-wrap: break-word;
     width: 100%;
     text-align: center;
     /* margin-bottom: 1rem; */
@@ -77,7 +79,8 @@ body{
     position: absolute;
     color:#f3f3f3;
     top: 25%;
-    box-shadow: 9px 9px 9px #212121;
+    box-shadow: 4px 4px 20px #212121;
+    z-index: 100;
 }
 
 .addBook{
@@ -146,16 +149,21 @@ input{
 .removeButton{
     width: 60px;
     height: 30px;
-    
+    font-size: 9px;
     background-color: transparent;
     border:None;
     width: 100%;
-    color: rgb(32, 30, 30);
+    color: rgb(107, 104, 104);
     font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 .removeButtonHovered{
     background-color: rgb(197, 74, 74);
+    color: black;
 }
 
 .newBook{
@@ -189,6 +197,7 @@ h4{
     font-size: 16px;
     margin:0;
     padding: 0;
+   
 }
 
 #toggleStatus{
@@ -196,6 +205,7 @@ h4{
     width: 20px;
     opacity: 0;
     display: hidden;
+    position: absolute;
    
 
 }
@@ -203,36 +213,97 @@ h4{
 .toggleButtonContainer{
     display: flex;
     align-items: center;
+    position: absolute;
+    top: 78%;
+    left: 61%;
+    cursor:pointer;
+    
 }
 
-#toggleStatus:checked + label{
+.toggle:checked + label{
     color:red;
     
 }
 
-label[for="toggleStatus"]::before{
+label.toggleLabel::before{
     content: "";
     height: 1.1em;
     width: 2.1em;
-    background-color: gray;
+    background-color: rgb(235, 144, 144);
     border-radius: 1em;
 }
 
-label[for="toggleStatus"]::after{
+label.toggleLabel::after{
     content: "";
     height: .9em;
     width: .9em;
-    background-color: rgb(6, 153, 221);
+    background-color: rgb(148, 36, 36);
     border-radius: 1em;
     position: absolute;
     top:.1em;
     left:.1em;
 }
 
-#toggleStatus + label{
+[type="checkbox"]:checked + label.toggleLabel::before{
+    content: "";
+    height: 1.1em;
+    width: 2.1em;
+    background-color: rgb(143, 231, 147);
+    border-radius: 1em;
+}
+
+[type="checkbox"]:checked + label.toggleLabel::after{
+    content: "";
+    height: .9em;
+    width: .9em;
+    background-color: rgb(36, 148, 70);
+    border-radius: 1em;
+    position: absolute;
+    top:.1em;
+    left:1.1em;
+}
+
+
+
+.toggle + label{
     display: flex;
     position: relative;
 }
 
+.titleToDisplay + h4{
 
+position: absolute;
+top:6rem
+}
+
+.titleToDisplay + h4 +h4{
+
+    position: absolute;
+    top:9rem
+    }
+
+    .titleToDisplay + h4 +h4 +h4{
+
+        position: absolute;
+        top:12rem
+        }
+
+.booksTitle{
+    color: White;
+    font-family: rieven-uncial, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    position: absolute;
+    top: 75px;
+}
+
+.titleSubMessage{
+    color: rgb(54, 54, 54);
+    position: absolute;
+    top: 124px;
+}
+
+.hide{
+    opacity: 0;
+}
 
