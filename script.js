@@ -33,9 +33,14 @@ let formGetBookRead=document.querySelector("#read")
 let formSubmit=document.querySelector(".addBook");
 const newBookButton= document.querySelector(".newBook");
 const theForm= document.querySelector(".theForm")
+
 newBookButton.addEventListener('click', () =>{
     theForm.classList.add("showNow")
 });
+
+// newBookButton.addEventListener('mouseenter', () =>{
+//     theForm.classList.add("showNow")
+// });
 
 formSubmit.addEventListener('mouseenter', () => {
     formSubmit.classList.add("formButtonHovered")

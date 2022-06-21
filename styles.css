@@ -7,6 +7,7 @@
     overflow:auto;
     box-sizing: border-box;
     justify-items: center;
+    height: 61.5%;
 }
 
 .bookCards{
@@ -167,10 +168,10 @@ input{
 }
 
 .newBook{
-    height: 40px;
-    width: 100%;
+    height: 2.3em;
+    width: 2.3em;
     background-color: #fdfdfd;
-    font-size: 30px;
+    font-size: 2.3em;
     color: #4c94c3;
     border: none;
     border-radius: 90px;
@@ -181,7 +182,31 @@ input{
     font-family: rieven-uncial, sans-serif;
     font-weight: bold;
     font-style: normal;
+    position: absolute;
+    top: 85%;
+    left:90% ;
 }
+
+.newBook:hover{
+    height: 2.3em;
+    width: 2.3em;
+    background-color: #ff741a;
+    font-size: 2.3em;
+    color: #ffffff;
+    border: none;
+    border-radius: 90px;
+    font-weight: bold;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+    font-family: rieven-uncial, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    position: absolute;
+    top: 85%;
+    left:90% ;
+}
+
 
 .footer{
     width: 100%;
@@ -190,7 +215,7 @@ input{
     position: absolute;
     bottom:0;
     font-size: 30px;
-    color: rgb(122, 121, 121);
+    color: rgb(126, 123, 123);
 }
 
 h4{
@@ -293,17 +318,26 @@ top:6rem
     font-family: rieven-uncial, sans-serif;
     font-weight: bold;
     font-style: normal;
-    position: absolute;
+    position: relative;
     top: 75px;
 }
 
 .titleSubMessage{
     color: rgb(54, 54, 54);
     position: absolute;
-    top: 124px;
+    top: 11em;
 }
 
 .hide{
     opacity: 0;
+}
+
+.header{
+    
+    
+    height: 2.5em;
+    width: 100%;
+    background-color: white;
+    box-shadow: 2px 2px 20px rgb(65, 63, 63);
 }
 
